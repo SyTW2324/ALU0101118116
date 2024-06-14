@@ -29,9 +29,15 @@
                             {
                                 "glob": "**/*",
                                 "input": "public"
+                            },
+                            {
+                                "glob": "_redirects",
+                                "input": "src",
+                                "output": "/"
                             }
                         ],
                         "styles": [
+                            "node_modules/font-awesome/css/font-awesome.css",
                             "src/styles.scss"
                         ],
                         "scripts": [
