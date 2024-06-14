@@ -1,0 +1,40 @@
+<div class="form">
+    <mat-card>
+        <mat-card-title>New Post</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="newPostForm" (ngSubmit)="newPost()">
+                <div class="fields">
+                    <mat-form-field>
+                        <input
+                            matInput
+                            formControlName="title"
+                            placeholder="Title" />
+                        <mat-error
+                            *ngIf="
+                                newPostForm.get('title')?.hasError('required')
+                            ">
+                            Title is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field id="content">
+                        <textarea
+                            matInput
+                            formControlName="content"
+                            placeholder="Content"></textarea>
+                        <mat-error
+                            *ngIf="
+                                newPostForm.get('content')?.hasError('required')
+                            ">
+                            Content is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="actions">
+                    <button mat-raised-button color="primary" type="submit">
+                        Post
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

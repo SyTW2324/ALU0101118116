@@ -1,0 +1,100 @@
+<div class="profile form">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>User Profile</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form>
+                <div
+                    class="profile-image-container"
+                    (click)="editProfileImage()"
+                    [ngClass]="{ not_editing: !editing }">
+                    <img
+                        [src]="profileImage"
+                        alt="Profile Image"
+                        class="profile-image" />
+                    <div class="overlay" *ngIf="editing">
+                        <mat-icon class="edit-icon">edit</mat-icon>
+                    </div>
+                </div>
+                <input
+                    type="file"
+                    id="fileInput"
+                    style="display: none"
+                    (change)="onFileSelected($event)"
+                    accept="image/*" />
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input
+                            matInput
+                            placeholder="Name"
+                            [disabled]="!editing"
+                            [(ngModel)]="user.first_name"
+                            [ngModelOptions]="{ standalone: true }"
+                            name="name"
+                            required />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Surname</mat-label>
+                        <input
+                            matInput
+                            placeholder="Surname"
+                            [disabled]="!editing"
+                            [(ngModel)]="user.last_name"
+                            [ngModelOptions]="{ standalone: true }"
+                            name="surname"
+                            required />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input
+                            matInput
+                            placeholder="Email"
+                            [disabled]="!editing"
+                            [(ngModel)]="user.email"
+                            [ngModelOptions]="{ standalone: true }"
+                            name="email"
+                            required />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Phone Number</mat-label>
+                        <input
+                            matInput
+                            placeholder="Phone Number"
+                            [disabled]="!editing"
+                            [(ngModel)]="user.phone_number"
+                            [ngModelOptions]="{ standalone: true }"
+                            name="phone_number"
+                            required />
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="actions">
+            <button
+                mat-flat-button
+                color="primary"
+                (click)="editing = true"
+                *ngIf="!editing">
+                Edit Profile
+            </button>
+            <button
+                mat-flat-button
+                color="primary"
+                (click)="save()"
+                *ngIf="editing">
+                Save Changes
+            </button>
+            <button
+                mat-stroked-button
+                color="primary"
+                (click)="cancel()"
+                *ngIf="editing">
+                Cancel
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

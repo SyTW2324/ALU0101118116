@@ -1,0 +1,72 @@
+<mat-card class="profile-card">
+    <div>
+        <mat-card-header>
+            <mat-card-title>{{ user.username }}</mat-card-title>
+            <mat-card-subtitle
+                >{{ user.first_name }} {{ user.last_name }}</mat-card-subtitle
+            >
+        </mat-card-header>
+        <mat-card-content id="profile-content">
+            <div>
+                <p>Joined: {{ user.created_at | date: 'mediumDate' }}</p>
+                <p>Following: {{ user.following?.length }}</p>
+            </div>
+            <div *ngIf="!myProfile">
+                <button
+                    mat-flat-button
+                    color="primary"
+                    (click)="followUser()"
+                    *ngIf="!following">
+                    Follow
+                </button>
+                <button
+                    mat-flat-button
+                    color="warn"
+                    (click)="unfollowUser()"
+                    *ngIf="following">
+                    Unfollow
+                </button>
+            </div>
+        </mat-card-content>
+    </div>
+    <div class="profile-image-container">
+        <img [src]="profileImage" alt="Profile Image" class="profile-image" />
+    </div>
+</mat-card>
+<mat-card class="posts-card">
+    <mat-card-header>
+        <mat-card-title>Posts</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="posts-container">
+            <div class="post" *ngFor="let post of user.posts">
+                <mat-card>
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image">
+                            <img [src]="profileImage" alt="{{ post.author }}" />
+                        </div>
+                        <mat-card-title>{{ post.title }}</mat-card-title>
+                        <mat-card-subtitle
+                            >By
+                            <a [routerLink]="['/profile', post.author]">
+                                {{ post.author }}
+                            </a>
+                            on
+                            {{
+                                post.created_at | date: 'medium'
+                            }}</mat-card-subtitle
+                        >
+                    </mat-card-header>
+                    <img
+                        mat-card-image
+                        *ngIf="post.featured_image"
+                        [src]="post.featured_image"
+                        alt="{{ post.title }}" />
+                    <mat-card-content>
+                        <p>{{ post.content }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

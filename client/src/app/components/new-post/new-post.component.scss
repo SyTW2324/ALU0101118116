@@ -1,0 +1,26 @@
+:host {
+    display: block;
+}
+
+.form {
+    display: block;
+    width: 100%;
+    min-height: 90vh !important;
+}
+
+.form > * {
+    min-height: 90vh !important;
+}
+
+.fields,
+.fields > * {
+    width: 100%;
+}
+
+#content {
+    height: 10rem;
+}
+
+.actions {
+    align-items: end;
+}
