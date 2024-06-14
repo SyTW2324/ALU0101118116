@@ -1,5 +1,7 @@
 # Proyecto final
 
+[![Client tests](https://github.com/SyTW2324/ALU0101118116/actions/workflows/client.yml/badge.svg)](https://github.com/SyTW2324/ALU0101118116/actions/workflows/client.yml)
+[![Server tests](https://github.com/SyTW2324/ALU0101118116/actions/workflows/server.yml/badge.svg)](https://github.com/SyTW2324/ALU0101118116/actions/workflows/server.yml)
 [![Coverage Status](https://coveralls.io/repos/github/SyTW2324/ALU0101118116/badge.svg?branch=main)](https://coveralls.io/github/SyTW2324/ALU0101118116?branch=main)
 
 - Luis Marcelo Chinea Rangel - alu0101118116@ull.edu.es
