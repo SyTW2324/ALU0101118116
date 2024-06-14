@@ -1,5 +1,7 @@
 # Proyecto final
 
+[![Coverage Status](https://coveralls.io/repos/github/SyTW2324/ALU0101118116/badge.svg?branch=main)](https://coveralls.io/github/SyTW2324/ALU0101118116?branch=main)
+
 - Luis Marcelo Chinea Rangel - alu0101118116@ull.edu.es
 
 ## Descripción
