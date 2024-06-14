@@ -1,0 +1,36 @@
+name: Client tests
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [18.x, 20.x]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install Angular CLI
+              run: npm install -g @angular/cli
+              working-directory: client
+
+            - name: Install dependencies
+              run: npm install
+              working-directory: client
+
+            - name: Run tests
+              working-directory: ./client
+              run: ng test --watch=false --browsers=ChromeHeadless

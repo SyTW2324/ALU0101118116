@@ -1,0 +1,58 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [18.x, 20.x]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            # Client tests and coverage
+            - name: Install Angular CLI
+              run: npm install -g @angular/cli
+              working-directory: client
+
+            - name: Install client dependencies
+              run: npm install
+              working-directory: client
+
+            - name: Run client tests
+              working-directory: client
+              run: npm run coverage
+
+            - name: Upload client coverage to Coveralls
+              working-directory: client
+              run: cat coverage/lcov.info | ./node_modules/.bin/coveralls
+              env:
+                  COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
+            # Server tests and coverage
+            - name: Install server dependencies
+              run: npm install
+              working-directory: server
+
+            - name: Run server tests
+              working-directory: server
+              run: npm run coverage
+
+            - name: Upload server coverage to Coveralls
+              working-directory: server
+              run: cat coverage/lcov.info | ./node_modules/.bin/coveralls
+              env:
+                  COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
