@@ -1,0 +1,173 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:host {
+    --white: rgba(255, 255, 255, 1);
+    --black: rgba(0, 0, 0, 1);
+
+    --error: rgba(244, 67, 54, 1);
+
+    --primary: rgba(156, 141, 195, 1);
+    --secondary: rgba(73, 68, 84, 1);
+
+    font-family:
+        'Inter',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+html,
+body,
+app-root {
+    margin: 0;
+    padding: 0;
+}
+
+.mat-sidenav-content {
+    min-height: 100vh;
+}
+
+.mat-sidenav-content>* {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.mat-sidenav-content>*>* {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.mat-mdc-card-avatar {
+    width: 3rem;
+    height: 3rem;
+}
+
+.authenticated {
+    min-height: 90vh;
+    margin-top: 10vh !important;
+}
+
+.authenticated>* {
+    min-height: 90vh !important;
+    width: 100% !important;
+}
+
+.authenticated>*>* {
+    min-height: initial !important;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin: auto;
+}
+
+.form mat-card {
+    padding: 2rem;
+}
+
+.form mat-card-title {
+    margin-bottom: 1rem;
+}
+
+.form mat-form-field {
+    padding: 0.5rem;
+}
+
+.form .fields,
+.form .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form .fields>*,
+.form .actions>* {
+    margin: 0.5rem;
+}
+
+.form .actions a,
+.form .actions a:visited,
+.form .actions a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form .actions a:hover {
+    text-decoration: underline;
+}
+
+.form .actions p {
+    color: var(--error);
+}
+
+.profile-image-container {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.profile-image-container:hover .overlay {
+    opacity: 1;
+}
+
+.edit-icon {
+    color: white !important;
+    font-size: 3rem !important;
+    width: 50% !important;
+    height: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.6156;
+}

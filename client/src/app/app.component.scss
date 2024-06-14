@@ -1,0 +1,70 @@
+@import './../styles.scss';
+
+mat-sidenav-container {
+    min-height: 100vh;
+}
+
+mat-toolbar {
+    position: fixed;
+    height: 10vh;
+    z-index: 999999;
+    border-bottom: 0.4rem solid var(--primary);
+    box-sizing: border-box;
+    background-color: var(--black);
+}
+
+mat-toolbar * {
+    color: var(--white);
+}
+
+mat-nav-list {
+    padding: 0;
+}
+
+mat-nav-list img {
+    width: 2rem;
+    height: 2rem;
+}
+
+mat-nav-list span {
+    font-size: 1.5rem;
+}
+
+#brand {
+    height: 100%;
+}
+
+mat-toolbar img {
+    margin-right: 0.5rem;
+}
+
+mat-sidenav {
+    width: 20%;
+    position: fixed;
+    top: 10vh;
+    border: 0;
+    box-sizing: content-box;
+    overflow: visible;
+}
+
+app-sidebar {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+mat-sidenav-content {
+    min-width: 80%;
+    position: relative;
+}
+
+@media screen and (max-width: 640px) {
+    mat-sidenav {
+        width: 100%;
+    }
+
+    mat-sidenav-content {
+        margin-top: 0;
+        min-width: 100%;
+    }
+}

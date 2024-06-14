@@ -1,0 +1,28 @@
+<mat-toolbar *ngIf="isAuthenticated">
+    <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-nav-list>
+        <a mat-list-item routerLink="/home" id="brand">
+            <img
+                matListItemIcon
+                src="logo-white.png"
+                alt="Avalon"
+                *ngIf="isDarkTheme" />
+            <img
+                matListItemIcon
+                src="logo-white.png"
+                alt="Avalon"
+                *ngIf="!isDarkTheme" />
+            <span>{{ title }}</span>
+        </a>
+    </mat-nav-list>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side" *ngIf="isAuthenticated">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content [ngClass]="{ authenticated: isAuthenticated }">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

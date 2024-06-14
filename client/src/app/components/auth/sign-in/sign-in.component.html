@@ -1,0 +1,55 @@
+<div class="background">
+    <img src="background.jpg" alt="Background Image" />
+</div>
+<div class="form">
+    <mat-card>
+        <mat-card-title>Sign In</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+                <div class="fields">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" required />
+                        <mat-error
+                            *ngIf="
+                                signInForm.get('email')?.hasError('required')
+                            ">
+                            Email is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input
+                            matInput
+                            formControlName="password"
+                            [type]="hide ? 'password' : 'text'"
+                            required />
+                        <mat-error
+                            *ngIf="
+                                signInForm.get('password')?.hasError('required')
+                            ">
+                            Password is required
+                        </mat-error>
+                        <button
+                            mat-icon-button
+                            matSuffix
+                            (click)="hide = !hide"
+                            (keydown.enter)="$event.preventDefault()"
+                            [attr.aria-label]="'Hide password'">
+                            <mat-icon>{{
+                                hide ? 'visibility_off' : 'visibility'
+                            }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="actions">
+                    <p *ngIf="error_message">{{ error_message }}</p>
+                    <a routerLink="/sign-up">Don't have an account? Sign Up</a>
+                    <button mat-raised-button color="primary" type="submit">
+                        Sign In
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
