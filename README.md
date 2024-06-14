@@ -3,7 +3,6 @@
 [![Client tests](https://github.com/SyTW2324/ALU0101118116/actions/workflows/client.yml/badge.svg)](https://github.com/SyTW2324/ALU0101118116/actions/workflows/client.yml)
 [![Server tests](https://github.com/SyTW2324/ALU0101118116/actions/workflows/server.yml/badge.svg)](https://github.com/SyTW2324/ALU0101118116/actions/workflows/server.yml)
 [![Coverage Status](https://coveralls.io/repos/github/SyTW2324/ALU0101118116/badge.svg?branch=main)](https://coveralls.io/github/SyTW2324/ALU0101118116?branch=main)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/05dc1c67-f5b5-4868-b73a-80b30f67ce31/deploy-status)](https://app.netlify.com/sites/avalon-mischief/deploys)
 
 - Luis Marcelo Chinea Rangel - alu0101118116@ull.edu.es
 
