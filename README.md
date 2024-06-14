@@ -3,6 +3,7 @@
 [![Client tests](https://github.com/SyTW2324/ALU0101118116/actions/workflows/client.yml/badge.svg)](https://github.com/SyTW2324/ALU0101118116/actions/workflows/client.yml)
 [![Server tests](https://github.com/SyTW2324/ALU0101118116/actions/workflows/server.yml/badge.svg)](https://github.com/SyTW2324/ALU0101118116/actions/workflows/server.yml)
 [![Coverage Status](https://coveralls.io/repos/github/SyTW2324/ALU0101118116/badge.svg?branch=main)](https://coveralls.io/github/SyTW2324/ALU0101118116?branch=main)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=iluzioDev_avalon&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=iluzioDev_avalon)
 
 - Luis Marcelo Chinea Rangel - alu0101118116@ull.edu.es
 
